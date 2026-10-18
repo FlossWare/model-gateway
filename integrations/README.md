@@ -1,4 +1,6 @@
-# model-router-ai Integrations
+# model-gateway Integrations
+
+The Python distribution and import package still use the legacy name `model-router-ai` / `model_router_ai`; repository links and new documentation use `model-gateway`.
 
 Three ways to integrate model-router-ai with AI coding assistants.
 

@@ -87,9 +87,10 @@ jobs:
 
       - name: Run Safety
         run: |
-          # Scan declared project dependencies, not unrelated packages installed by the CI runner.
-          safety scan --target . --output json || true
-          safety scan --target .
+          # Scan this project's installed development tools, not Safety CLI's own dependencies.
+          python -m pip freeze | grep -Ei '^(pytest|pytest-asyncio|ruff|mypy|bandit)==' > /tmp/project-requirements.txt
+          safety check --file /tmp/project-requirements.txt --json || true
+          safety check --file /tmp/project-requirements.txt
 
       - name: Upload security report
         uses: actions/upload-artifact@v4

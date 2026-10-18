@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 authors = [{name = "Scot P. Floess", email = "sfloess@nc.rr.com"}]
-keywords = ["llm", "model-router-ai", "ai", "decorator-pattern", "cost-optimization"]
+keywords = ["llm", "model-gateway", "ai", "decorator-pattern", "cost-optimization"]
 classifiers = [
     "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",

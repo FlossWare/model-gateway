@@ -75,7 +75,7 @@ jobs:
         id: get-current-version
         if: steps.check-commits.outputs.needs-version == 'true' && steps.determine-bump.outputs.bump-type != 'none'
         run: |
-          CURRENT_VERSION=$(grep -oP 'version = "\K[0-9]+\.[0-9]+' pyproject.toml | head -1)
+          CURRENT_VERSION=$(grep -oP '^version = "\K[0-9]+\.[0-9]+' pyproject.toml | head -1)
           echo "current-version=$CURRENT_VERSION" >> $GITHUB_OUTPUT
           echo "Current version: $CURRENT_VERSION"
 
@@ -113,7 +113,7 @@ jobs:
       - name: Validate version sync
         if: steps.check-commits.outputs.needs-version == 'true' && steps.determine-bump.outputs.bump-type != 'none'
         run: |
-          PYPROJECT_VERSION=$(grep -oP 'version = "\K[0-9]+\.[0-9]+' pyproject.toml | head -1)
+          PYPROJECT_VERSION=$(grep -oP '^version = "\K[0-9]+\.[0-9]+' pyproject.toml | head -1)
           INIT_VERSION=$(grep -oP '__version__ = "\K[0-9]+\.[0-9]+' model_router_ai/__init__.py)
 
           echo "pyproject.toml version: $PYPROJECT_VERSION"

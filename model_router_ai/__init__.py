@@ -51,7 +51,7 @@ from model_router_ai.workers import (
     classify_failure,
 )
 
-__version__ = "0.1"
+__version__ = "0.3"
 
 __all__ = [
     "Account",

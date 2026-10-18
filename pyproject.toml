@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "model-router-ai"
-version = "0.2"
+version = "0.3"
 description = "Provider-neutral model invocation, resource management, and policy-aware selection"
 readme = "README.md"
 license = "MIT"

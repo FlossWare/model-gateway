@@ -88,8 +88,8 @@ jobs:
       - name: Run Safety
         run: |
           # Scan declared project dependencies, not unrelated packages installed by the CI runner.
-          safety scan --target pyproject.toml --output json || true
-          safety scan --target pyproject.toml
+          safety scan --target . --output json || true
+          safety scan --target .
 
       - name: Upload security report
         uses: actions/upload-artifact@v4

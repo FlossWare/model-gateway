@@ -66,9 +66,11 @@ Provider-native prompt caching is a gateway capability. Cache eligibility, ident
 
 `loom-ai` owns Worker/Arbiter execution and Intent. `model-gateway` supplies model capability to that runtime. The gateway can also be consumed by other compatible clients without making those clients part of its architecture.
 
-## Migration
+## Current implementation and migration note
 
-The former `model-router` terminology should be treated as historical. New APIs, documentation, and dependencies should use `model-gateway` and describe routing/selection as replaceable strategies or implementations.
+The current Python distribution and import package retain the legacy identifiers `model-router-ai` and `model_router_ai`. The implementation still exposes names such as `ModelRouter`, `ProviderRouter`, and `ThompsonSamplingStrategy`; these are current APIs, not merely historical terminology. Repository-level documentation and links use `model-gateway`. A distribution/import rename or API redesign needs a separate compatibility decision.
+
+The former repository name `model-router` is historical. New documentation and repository dependencies should use `model-gateway` and describe routing/selection as replaceable strategies or implementations.
 
 ## License
 
